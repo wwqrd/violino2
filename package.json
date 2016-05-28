@@ -1,0 +1,19 @@
+{
+  "name": "violin2",
+  "version": "1.0.0",
+  "description": "A violin sight reading app built using Redux and React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "webpack-dev-server --progress --colors --content-base=public --host=0.0.0.0 --port 40010"
+  },
+  "author": "Ezeikel Kit Polyblank",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.9.0",
+    "babel-loader": "^6.2.4",
+    "babel-preset-react": "^6.5.0",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0"
+  }
+}

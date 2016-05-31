@@ -1,11 +1,13 @@
 import React from 'react';
 
-class Violino extends React.Component {
+class NoteName extends React.Component {
   render() {
     return (
       <div>
-        <h1>Violino</h1>
+        <h1>C3</h1>
       </div>
     );
   }
 }
+
+export default NoteName;

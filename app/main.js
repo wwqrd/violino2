@@ -1,5 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Violino from './components/violino.jsx';
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import Violino from './containers/violino.js'
 
-ReactDOM.render(<Violino/>, document.getElementById('root'));
+let store = createStore(() => { return {}; });
+
+render(
+  <Provider store={store}>
+    <Violino />
+  </Provider>,
+  document.getElementById('root')
+);

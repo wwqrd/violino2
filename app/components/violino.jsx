@@ -1,19 +1,13 @@
 import React from 'react';
-import NoteName from './note_name.jsx';
-import MusicalScore from './musical_score.jsx';
-import FingerPosition from './finger_position.jsx';
+import NoteName from '../containers/note_name.js';
+import MusicalScore from '../containers/musical_score.js';
+import FingerPosition from '../containers/finger_position.js';
 
-class Violino extends React.Component {
-  render() {
-    return (
-      <div>
-        <h1>Violino</h1>
-        <NoteName />
-        <MusicalScore />
-        <FingerPosition />
-      </div>
-    );
-  }
-}
-
-export default Violino;
+export default () => (
+  <div>
+    <h1>Violino</h1>
+    <NoteName />
+    <MusicalScore />
+    <FingerPosition />
+  </div>
+);

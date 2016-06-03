@@ -3,6 +3,7 @@ import NoteName from '../components/note_name.jsx'
 
 const mapStateToProps = (state) => {
   return {
+    note: state.note.note
   };
 };
 

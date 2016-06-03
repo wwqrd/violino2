@@ -1,8 +1,8 @@
 import React from 'react';
 
-const FingerPosition = () => (
+const FingerPosition = ({ note }) => (
   <div>
-    <p>Somewhere on the fingerboard</p>
+    <p>Wherever { note } is on the fingerboard</p>
   </div>
 );
 

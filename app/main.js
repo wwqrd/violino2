@@ -13,3 +13,7 @@ render(
   </Provider>,
   document.getElementById('root')
 );
+
+setInterval(() => {
+  store.dispatch({type: 'SELECT_NOTE'});
+}, 2000);

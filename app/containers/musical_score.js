@@ -3,6 +3,7 @@ import MusicalScore from '../components/musical_score.jsx'
 
 const mapStateToProps = (state) => {
   return {
+    note: state.note.note
   };
 };
 

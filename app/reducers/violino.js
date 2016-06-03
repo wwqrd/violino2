@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import noteGenerator from './note_generator.js'
+import note from './note.js'
 
 export default combineReducers({
-  noteGenerator
+  note
 })

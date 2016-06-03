@@ -14,6 +14,21 @@ render(
   document.getElementById('root')
 );
 
-setInterval(() => {
+const play = () => {
+
   store.dispatch({type: 'SELECT_NOTE'});
-}, 2000);
+  store.dispatch({type: 'HIDE_NOTE_DETAILS'});
+
+  setTimeout(() => {
+    store.dispatch({type: 'REVEAL_NOTE_DETAILS'});
+  }, 2000);
+
+};
+
+setInterval(() => {
+
+  play();
+
+}, 4000);
+
+play();

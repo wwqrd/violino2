@@ -10,7 +10,9 @@
 // Wn = c/fn 
 // where W is the wavelength and c is the speed of sound. The speed of sound depends on temperature, but is approximately 345 m/s at "room temperature." 
 
-const note = (state = {}, action) => {
+const initialState = {note: 0};
+
+const note = (state = initialState, action) => {
   switch(action.type) {
     case 'SELECT_NOTE':
       let note = Math.round(Math.random()*45)-2;  // G3-E7
@@ -20,10 +22,7 @@ const note = (state = {}, action) => {
       };
   }
 
-  return {
-    ...state,
-    note: 0
-  };
+  return state;
 };
 
 export default note;

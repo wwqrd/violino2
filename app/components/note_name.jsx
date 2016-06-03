@@ -11,9 +11,9 @@ const nameOfNote = (semitones) => {
   return `${note}${octave}`;
 };
 
-const NoteName = ({ note }) => (
+const NoteName = ({ note, showNoteDetails }) => (
   <div>
-    <h1>{ nameOfNote(note) }</h1>
+    <h1>{ showNoteDetails ? nameOfNote(note) : '' }</h1>
   </div>
 );
 

@@ -24,6 +24,7 @@
     "eslint": "^2.11.0",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
+    "vexflow": "^1.2.45",
     "webpack": "^1.13.1"
   }
 }

@@ -21,7 +21,7 @@ const play = () => {
 
   setTimeout(() => {
     store.dispatch({type: 'REVEAL_NOTE_DETAILS'});
-  }, 2000);
+  }, 500);
 
 };
 

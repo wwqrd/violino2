@@ -15,34 +15,25 @@ const vexflowFormat = (semitones) => {
 let renderer,
     ctx;
 
-class MusicalScore extends React.Component {
+const setup = (canvas) => {
+  renderer = new Vex.Flow.Renderer(canvas,
+    Vex.Flow.Renderer.Backends.CANVAS);
 
-  componentDidMount() {
-    this.setupVexflow();
-    this.updateCanvas();
-  }
+  ctx = renderer.getContext();
+};
 
-  componentDidUpdate() {
-    this.updateCanvas();
-  }
+const update = (note, showNoteDetails) => {
+  clear();
+  let stave = new Vex.Flow.Stave(10, 0, 200);
 
-  setupVexflow() {
-    renderer = new Vex.Flow.Renderer(this.refs.canvas,
-      Vex.Flow.Renderer.Backends.CANVAS);
+  stave.addClef("treble").setContext(ctx).draw();
 
-    ctx = renderer.getContext();
-  }
+  if(showNoteDetails === true) {
 
-  updateCanvas() {
-    ctx.clearRect(0, 0, 300, 300);
-    let stave = new Vex.Flow.Stave(10, 0, 200);
-
-    stave.addClef("treble").setContext(ctx).draw();
-    // Create the notes
-    let notes = [
-      // A quarter-note C.
-      new Vex.Flow.StaveNote({ keys: [vexflowFormat(this.props.note)], duration: "q" })
-    ];
+    let vNote = new Vex.Flow.StaveNote({ keys: [vexflowFormat(note)], duration: "q" })
+    if(/\#/.test(vexflowFormat(note))) {
+      vNote.addAccidental(0, new Vex.Flow.Accidental("#"));
+    }
 
     // Create a voice in 4/4
     let voice = new Vex.Flow.Voice({
@@ -52,7 +43,7 @@ class MusicalScore extends React.Component {
     });
 
     // Add notes to voice
-    voice.addTickables(notes);
+    voice.addTickables([vNote]);
 
     // Format and justify the notes to 500 pixels
     let formatter = new Vex.Flow.Formatter().
@@ -60,6 +51,26 @@ class MusicalScore extends React.Component {
 
     // Render voice
     voice.draw(ctx, stave);
+  }
+};
+
+const clear = () => {
+  ctx.clearRect(0, 0, 300, 300);
+};
+
+class MusicalScore extends React.Component {
+
+  componentDidMount() {
+    setup(this.refs.canvas);
+    this.updateCanvas();
+  }
+
+  componentDidUpdate() {
+    this.updateCanvas();
+  }
+
+  updateCanvas() {
+    update(this.props.note, this.props.showNoteDetails);
   }
 
   render() {

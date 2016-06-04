@@ -11,11 +11,13 @@
 // where W is the wavelength and c is the speed of sound. The speed of sound depends on temperature, but is approximately 345 m/s at "room temperature." 
 
 const initialState = {note: 0};
+const minNote = -2;  // G3
+const maxNote = 30;  // D#/6, E7 = 43
 
 const note = (state = initialState, action) => {
   switch(action.type) {
     case 'SELECT_NOTE':
-      let note = Math.round(Math.random()*45)-2;  // G3-E7
+      let note = Math.round(Math.random()*(maxNote - minNote)) + minNote;
       return {
         ...state,
         note: note  // semitones from middle A

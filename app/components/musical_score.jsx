@@ -1,5 +1,6 @@
 import React from 'react';
 import vexflow from 'vexflow';
+import '../../stylesheets/components/musical_score.sass';
 
 const NOTE_NAMES = 'a a# b c c# d d# e f f# g g#'.split(' ');
 
@@ -11,6 +12,9 @@ const vexflowFormat = (semitones) => {
   let note = NOTE_NAMES[noteIndex];
   return `${note}/${octave}`;
 };
+
+const width = 300
+const height = 225
 
 let renderer,
     ctx;
@@ -24,7 +28,7 @@ const setup = (canvas) => {
 
 const update = (note, showNoteDetails) => {
   clear();
-  let stave = new Vex.Flow.Stave(10, 0, 200);
+  let stave = new Vex.Flow.Stave(10, 50, width-20);
 
   stave.addClef("treble").setContext(ctx).draw();
 
@@ -47,7 +51,7 @@ const update = (note, showNoteDetails) => {
 
     // Format and justify the notes to 500 pixels
     let formatter = new Vex.Flow.Formatter().
-      joinVoices([voice]).format([voice], 200);
+      joinVoices([voice]).format([voice], width);
 
     // Render voice
     voice.draw(ctx, stave);
@@ -55,7 +59,7 @@ const update = (note, showNoteDetails) => {
 };
 
 const clear = () => {
-  ctx.clearRect(0, 0, 300, 300);
+  ctx.clearRect(0, 0, width, height);
 };
 
 class MusicalScore extends React.Component {
@@ -75,7 +79,9 @@ class MusicalScore extends React.Component {
 
   render() {
     return (
-      <canvas ref="canvas" width={300} height={300}/>
+      <div className="musical-score">
+        <canvas ref="canvas" width={width} height={height}/>
+      </div>
     );
   }
 }

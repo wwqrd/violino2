@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "webpack-dev-server --progress --colors --content-base=public --host=0.0.0.0 --port 40010"
+    "serve": "webpack-dev-server --progress --colors --content-base=public --host=0.0.0.0 --port 40010",
+    "build": "webpack --optimize-minimize --optimize-occurrence-order --optimize-dedupe"
   },
   "author": "Ezeikel Kit Polyblank",
   "license": "ISC",

@@ -6,10 +6,13 @@ then
   exit 1
 fi
 echo 'Clean, continuing'
+
 webpack --optimize-minimize --optimize-occurrence-order --optimize-dedupe
+
 if git diff-index --quiet HEAD --
   echo 'No changes, exiting.'
   exit 1
-then
+fi
 git add -A
 git commit -m "Build."
+

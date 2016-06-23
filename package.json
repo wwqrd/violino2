@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./build.sh",
-    "deploy": "npm build && git subtree push --prefix public origin master"
+    "deploy": "npm build && git subtree push --prefix public origin master",
+    "serve": "webpack-dev-server --progress --colors --content-base=public --host=0.0.0.0 --port 40010"
   },
   "author": "Ezeikel Kit Polyblank",
   "license": "ISC",
@@ -24,6 +25,7 @@
     "babel-preset-react": "^6.5.0",
     "css-loader": "^0.23.1",
     "eslint": "^2.11.0",
+    "paper": "^0.9.25",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
     "sass-loader": "^3.2.0",

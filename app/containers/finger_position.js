@@ -3,6 +3,7 @@ import FingerPosition from '../components/finger_position.jsx'
 
 const mapStateToProps = (state) => {
   return {
+    showNoteDetails: state.game.showNoteDetails,
     note: state.note.note
   };
 };

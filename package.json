@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./build.sh",
-    "deploy": "npm build && git subtree push --prefix public origin master",
+    "deploy": "npm build && git subtree push --prefix public origin gh-pages",
     "serve": "webpack-dev-server --progress --colors --content-base=public --host=0.0.0.0 --port 40010"
   },
   "author": "Ezeikel Kit Polyblank",

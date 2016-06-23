@@ -15,11 +15,12 @@ const update = (note, showNoteDetails) => {
   let colours = {
     inactiveSpot: 'rgb(60, 60, 60)',
     inactiveString: 'rgb(60, 60, 60)',
-    activeSpot: 'rgb(230, 230, 230)'
+    activeSpot: 'rgb(240, 60, 60)'
   };
   let gridX = width / 5;
   let gridY = height / 9;
   let fingerSpot = 3;
+  let activeFingerSpot = 10;
 
   for(var row of [1, 3, 5, 6, 8]) {
     ctx.beginPath();
@@ -30,7 +31,7 @@ const update = (note, showNoteDetails) => {
         ctx.lineWidth = 4;
         break;
       case 3:
-        ctx.strokeStyle = 'rgb(212, 106, 106)';
+        ctx.strokeStyle = 'rgb(232, 126, 126)';
         break;
       case 5:
         ctx.strokeStyle = 'rgb(120, 200, 108)';
@@ -64,6 +65,26 @@ const update = (note, showNoteDetails) => {
       ctx.arc(gridX * string, gridY * row, fingerSpot, 0, 2 * Math.PI);
       ctx.fill();
     }
+  }
+
+  let normalisedNote = note + 2;
+  if(normalisedNote <= 28 && showNoteDetails) {
+    let string = 1 + Math.floor(normalisedNote / 7);
+    let fret = 1 + (normalisedNote % 7);
+
+    if (fret != 1) {
+      ctx.fillStyle = colours.activeSpot;
+      ctx.beginPath();
+      ctx.arc(gridX * string, gridY * fret, activeFingerSpot, 0, 2 * Math.PI);
+      ctx.fill();
+    }
+
+    ctx.strokeStyle = colours.activeSpot;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(gridX * string, gridY);
+    ctx.lineTo(gridX * string, height);
+    ctx.stroke();
   }
 
 };

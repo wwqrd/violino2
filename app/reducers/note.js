@@ -12,7 +12,7 @@
 
 const initialState = {note: 0};
 const minNote = -2;  // G3
-const maxNote = 30;  // D#/6, E7 = 43
+const maxNote = 26;  // B5
 
 const note = (state = initialState, action) => {
   switch(action.type) {

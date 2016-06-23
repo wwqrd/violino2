@@ -10,6 +10,7 @@ echo 'Clean, continuing'
 webpack --optimize-minimize --optimize-occurrence-order --optimize-dedupe
 
 if git diff-index --quiet HEAD --
+then
   echo 'No changes, exiting.'
   exit 1
 fi

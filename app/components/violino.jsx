@@ -8,8 +8,8 @@ import '../../stylesheets/components/violino.sass';
 export default () => (
   <div className="violino">
     <h1 className="violino__title">Violino</h1>
-    <NoteName />
     <MusicalScore />
+    <NoteName />
     <FingerPosition />
   </div>
 );

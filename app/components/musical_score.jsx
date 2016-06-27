@@ -14,7 +14,7 @@ const vexflowFormat = (semitones) => {
 };
 
 const width = 300
-const height = 225
+const height = 175
 
 let renderer,
     ctx;

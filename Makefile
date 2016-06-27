@@ -1,3 +1,6 @@
+default: isclean build checkin
+.PHONY: default analyse
+
 isclean:
 	@if ! git diff-index --quiet HEAD --; \
 	then \
@@ -15,10 +18,8 @@ checkin:
 	echo 'No changes, exiting.'; \
 	exit 1; \
 	fi; \
-	git add -A; \
+	git add -A public; \
 	git commit -m "Build."
 
 analyse:
 	webpack --json | webpack-bundle-size-analyzer
-
-default: isclean build checkin

@@ -1,5 +1,5 @@
-import { connect } from 'react-redux'
-import FingerPosition from '../components/finger_position.jsx'
+import { connect } from 'react-redux';
+import FingerPosition from '../components/finger_position.jsx';
 
 const mapStateToProps = (state) => {
   return {
@@ -8,9 +8,8 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-  };
+const mapDispatchToProps = () => {
+  return {};
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(FingerPosition);

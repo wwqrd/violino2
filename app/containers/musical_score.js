@@ -1,5 +1,5 @@
-import { connect } from 'react-redux'
-import MusicalScore from '../components/musical_score.jsx'
+import { connect } from 'react-redux';
+import MusicalScore from '../components/musical_score.jsx';
 
 const mapStateToProps = (state) => {
   return {
@@ -8,9 +8,8 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-  };
+const mapDispatchToProps = () => {
+  return {};
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MusicalScore);

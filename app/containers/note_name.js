@@ -1,5 +1,5 @@
-import { connect } from 'react-redux'
-import NoteName from '../components/note_name.jsx'
+import { connect } from 'react-redux';
+import NoteName from '../components/note_name.jsx';
 
 const mapStateToProps = (state) => {
   return {
@@ -8,9 +8,8 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-  };
+const mapDispatchToProps = () => {
+  return {};
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(NoteName);

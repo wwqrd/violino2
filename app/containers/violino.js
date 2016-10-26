@@ -1,14 +1,12 @@
-import { connect } from 'react-redux'
-import Violino from '../components/violino.jsx'
+import { connect } from 'react-redux';
+import Violino from '../components/violino.jsx';
 
-const mapStateToProps = (state) => {
-  return {
-  };
+const mapStateToProps = () => {
+  return {};
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-  };
+const mapDispatchToProps = () => {
+  return {};
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Violino);

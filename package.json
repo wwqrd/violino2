@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./build.sh",
+    "build": "make build",
     "deploy": "npm build && git subtree push --prefix public origin gh-pages",
     "serve": "webpack-dev-server --progress --colors --content-base=public --host=0.0.0.0 --port 40010"
   },
   "author": "Ezeikel Kit Polyblank",
   "license": "ISC",
   "dependencies": {
+    "node-sass": "^3.10.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0"
   },

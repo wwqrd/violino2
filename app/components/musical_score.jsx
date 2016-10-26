@@ -1,5 +1,5 @@
 import React from 'react';
-import vexflow from 'vexflow';
+import Vex from 'vexflow';
 import '../../stylesheets/components/musical_score.sass';
 
 const NOTE_NAMES = 'a a# b c c# d d# e f f# g g#'.split(' ');
